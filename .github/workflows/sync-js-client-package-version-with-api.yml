@@ -32,9 +32,6 @@ jobs:
         run: |
           sed -i "0,/\"@tourmalinecore\/inner-circle-time-api-js-client\": .*/s//\"@tourmalinecore\/inner-circle-time-api-js-client\": \"^${{ github.event.client_payload.client_version }}\",/" package.json
 
-      - name: Install new js-client version to update package-lock.json
-        run: npm install
-
       - name: Commit and Push Changes
         run: |
           git config user.email "contact@tourmalinecore.com"
