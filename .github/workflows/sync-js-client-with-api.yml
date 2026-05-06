@@ -1,14 +1,14 @@
-name: Sync js-client package version
+name: Sync js-client with api
 on:
   repository_dispatch:
       # this workflow is triggered by an external script that calls the GitHub API
       # when a new version of the JS API client is released. Without this filter,
       # the workflow would run on every incoming dispatch event, not just this one.
     types:
-      - sync-js-client-package-version
+      - trigger-js-client-sync-in-ui
 
 jobs:
-  sync-js-client-package-version:
+  sync-js-client-with-api:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
